@@ -16,12 +16,10 @@ class VeritasTest < Test::Unit::TestCase
       ],
       records.enum_for(:each)
     );
-   circles = relation.restrict(
-               relation[:shape].match(/circle/i)
-                 .and(relation[:price].gt(50))
-                 .and(lambda { |tuple| tuple[:id] % 2 == 0 })) # custom modulo predicate -> only even ids
-   p circles
-   p circles.count
+   circles = relation.restrict { |rel|
+               rel[:shape].match(/circle/i)
+                 .and(rel[:price].gt(50))
+                 .and(lambda { |tuple| tuple[:id] % 2 == 0 })} # custom modulo predicate -> only even ids
    circles.each { |c| p c }
   end
 
