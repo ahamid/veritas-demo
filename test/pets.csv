@@ -8,4 +8,3 @@ Id:Integer,Owner:Integer,Name:String,Type:String
 7,6,Garfield,Cat
 8,7,Odie,Dog
 9,2,Smokey,Cat
-
