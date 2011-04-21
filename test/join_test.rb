@@ -42,9 +42,15 @@ class JoinTest < Test::Unit::TestCase
     owner_relation = Veritas::Relation.new(owners.header, owners.data)
     pet_relation = Veritas::Relation.new(pets.header, pets.data)
 
+    p "theta join"
     renamed = pet_relation.rename(:name => :pet_name, :id => :pet_id)
     # select * from owner, pet where owner.id = pet.owner and pet.type = 'Cat'
     owner_relation.join(renamed, owner_relation[:id].eq(renamed[:owner])).restrict(renamed[:type].eq('Cat')).each do |r|
+      p r
+    end
+
+    p "natural join"
+    owner_relation.join(pet_relation.rename(:id => :pet_id, :name => :pet_name, :owner => :id)).restrict(pet_relation[:type].eq('Cat')).each do |r|
       p r
     end
   end
