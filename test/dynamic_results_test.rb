@@ -4,7 +4,10 @@ require 'veritas'
 class DynamicResultsTest < Test::Unit::TestCase
   def test_dynamic_results
     g = generative_fib
-    5.times { p g.next }
+    relation = Veritas::Relation.new([ [ :num, Integer ] ], g)
+    # does not load all values into memory
+    divisible_by_5 = relation.restrict(lambda { |tuple| tuple[:num] % 5 == 0}).take(20)
+    divislbe_by_5.each { |v| p v }
   end
 
   protected
