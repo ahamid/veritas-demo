@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'graphviz'
-require 'visitor'
+require 'veritas_demo/visitor'
 
 class OptimizerTest < Test::Unit::TestCase
   def test_optimizer
