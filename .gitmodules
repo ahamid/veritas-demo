@@ -1,0 +1,3 @@
+[submodule "veritas-optimizer"]
+	path = veritas-optimizer
+	url = https://github.com/dkubb/veritas-optimizer.git
