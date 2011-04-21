@@ -1,0 +1,10 @@
+Id:Integer,Owner:Integer,Name:String,Type:String
+1,3,Fluffy,Cat
+2,2,Spot,Dog
+3,5,Tippy,Dog
+4,5,Nyan,Cat
+5,1,Max,Dog
+6,4,Bill,Cat
+7,6,Garfield,Cat
+8,7,Odie,Dog
+
