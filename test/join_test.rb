@@ -1,5 +1,4 @@
-require 'test/unit'
-require 'veritas'
+require 'test_helper'
 require 'csv'
 
 class CSVFile
@@ -48,8 +47,8 @@ end
 
 class JoinTest < Test::Unit::TestCase
   def test_joins
-    owners = CSVFile.new("test/owners.csv")
-    pets = CSVFile.new("test/pets.csv")
+    owners = CSVFile.new(data_file('owners.csv'))
+    pets = CSVFile.new(data_file('pets.csv'))
 
     owner_relation = Veritas::Relation.new(owners.header, owners.data)
     pet_relation = Veritas::Relation.new(pets.header, pets.data)

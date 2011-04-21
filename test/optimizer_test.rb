@@ -1,5 +1,4 @@
-require 'test/unit'
-require 'veritas'
+require 'test_helper'
 require 'graphviz'
 require 'visitor'
 

@@ -1,5 +1,4 @@
-require 'test/unit'
-require 'veritas'
+require 'test_helper'
  
 class DynamicResultsTest < Test::Unit::TestCase
   def test_dynamic_results
